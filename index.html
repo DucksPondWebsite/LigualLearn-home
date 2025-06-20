@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LinguaLearn - Master Languages Fast</title>
+    <meta name="description" content="Learn Spanish, French, and German with interactive lessons and quizzes">
+    <link rel="stylesheet" href="styles/main.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <a href="index.html" class="brand-link">
+                    <svg class="brand-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="12" cy="12" r="10"/>
+                        <line x1="2" y1="12" x2="22" y2="12"/>
+                        <path d="m9 12 2 2 4-4"/>
+                    </svg>
+                    <span class="brand-text">LinguaLearn</span>
+                </a>
+            </div>
+
+            <!-- Desktop Navigation -->
+            <div class="nav-links desktop-nav">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="quiz.html" class="nav-link">
+                    <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M9.5 2A2.5 2.5 0 0 1 12 4.5v15a2.5 2.5 0 0 1-4.96.44L5.5 19a2.5 2.5 0 0 1-2.96-2.46V6.5A2.5 2.5 0 0 1 5.5 4h.44a2.5 2.5 0 0 1 2.46-2z"/>
+                    </svg>
+                    Quiz
+                </a>
+                <div class="dropdown">
+                    <button class="nav-link dropdown-btn">
+                        <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/>
+                            <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/>
+                        </svg>
+                        Dictionary
+                    </button>
+                    <div class="dropdown-menu">
+                        <a href="spanish-dictionary.html" class="dropdown-item">Spanish Dictionary</a>
+                        <a href="french-dictionary.html" class="dropdown-item">French Dictionary</a>
+                        <a href="german-dictionary.html" class="dropdown-item">German Dictionary</a>
+                    </div>
+                </div>
+                <button class="btn btn-primary">Get Started</button>
+            </div>
+
+            <!-- Mobile menu button -->
+            <div class="mobile-menu-btn">
+                <button class="hamburger" onclick="toggleMobileMenu()">
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Navigation -->
+        <div class="mobile-nav" id="mobileNav">
+            <a href="index.html" class="mobile-nav-link">Home</a>
+            <a href="quiz.html" class="mobile-nav-link">Quiz</a>
+            <a href="spanish-dictionary.html" class="mobile-nav-link">Spanish Dictionary</a>
+            <a href="french-dictionary.html" class="mobile-nav-link">French Dictionary</a>
+            <a href="german-dictionary.html" class="mobile-nav-link">German Dictionary</a>
+        </div>
+    </nav>
+
+    <main class="main-content">
+        <div class="container">
+            <!-- Hero Section -->
+            <section class="hero">
+                <h1 class="hero-title">
+                    Master Languages with <span class="text-primary">LinguaLearn</span>
+                </h1>
+                <p class="hero-description">
+                    Learn Spanish, French, and German through interactive lessons, engaging quizzes, and comprehensive
+                    dictionaries. Start your language journey today!
+                </p>
+                <div class="hero-buttons">
+                    <a href="quiz.html" class="btn btn-primary btn-large">Start Learning</a>
+                    <button class="btn btn-outline btn-large">View Dictionaries</button>
+                </div>
+            </section>
+
+            <!-- Features Section -->
+            <section class="features">
+                <h2 class="section-title">Why Choose LinguaLearn?</h2>
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M9.5 2A2.5 2.5 0 0 1 12 4.5v15a2.5 2.5 0 0 1-4.96.44L5.5 19a2.5 2.5 0 0 1-2.96-2.46V6.5A2.5 2.5 0 0 1 5.5 4h.44a2.5 2.5 0 0 1 2.46-2z"/>
+                            </svg>
+                        </div>
+                        <h3 class="feature-title">Interactive Quizzes</h3>
+                        <p class="feature-description">
+                            Test your knowledge with engaging quizzes designed to reinforce learning
+                        </p>
+                    </div>
+
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/>
+                                <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/>
+                            </svg>
+                        </div>
+                        <h3 class="feature-title">Comprehensive Dictionaries</h3>
+                        <p class="feature-description">Access extensive dictionaries for Spanish, French, and German</p>
+                    </div>
+
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polygon points="13,2 3,14 12,14 11,22 21,10 12,10 13,2"/>
+                            </svg>
+                        </div>
+                        <h3 class="feature-title">Fast Progress</h3>
+                        <p class="feature-description">
+                            Our proven methods help you learn languages faster than traditional methods
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Languages Section -->
+            <section class="languages">
+                <h2 class="section-title">Languages We Offer</h2>
+                <div class="languages-grid">
+                    <div class="language-card">
+                        <div class="language-header">
+                            <h3 class="language-title">
+                                <span class="flag">🇪🇸</span>
+                                Spanish
+                            </h3>
+                            <p class="language-description">Learn the world's second most spoken language</p>
+                        </div>
+                        <div class="language-content">
+                            <a href="spanish-dictionary.html" class="btn btn-outline btn-full">Explore Spanish</a>
+                        </div>
+                    </div>
+
+                    <div class="language-card">
+                        <div class="language-header">
+                            <h3 class="language-title">
+                                <span class="flag">🇫🇷</span>
+                                French
+                            </h3>
+                            <p class="language-description">Master the language of love and diplomacy</p>
+                        </div>
+                        <div class="language-content">
+                            <a href="french-dictionary.html" class="btn btn-outline btn-full">Explore French</a>
+                        </div>
+                    </div>
+
+                    <div class="language-card">
+                        <div class="language-header">
+                            <h3 class="language-title">
+                                <span class="flag">🇩🇪</span>
+                                German
+                            </h3>
+                            <p class="language-description">Learn the language of innovation and precision</p>
+                        </div>
+                        <div class="language-content">
+                            <a href="german-dictionary.html" class="btn btn-outline btn-full">Explore German</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Stats Section -->
+            <section class="stats">
+                <div class="stats-content">
+                    <h2 class="stats-title">Join Thousands of Learners</h2>
+                    <div class="stats-grid">
+                        <div class="stat-item">
+                            <div class="stat-number">50K+</div>
+                            <div class="stat-label">Active Learners</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">1M+</div>
+                            <div class="stat-label">Lessons Completed</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">95%</div>
+                            <div class="stat-label">Success Rate</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <script src="scripts/main.js"></script>
+</body>
+</html>

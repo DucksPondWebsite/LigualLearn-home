@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Language Quiz - LinguaLearn</title>
+    <link rel="stylesheet" href="styles/main.css">
+</head>
+<body>
+    <!-- Navigation (same as index.html) -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <a href="index.html" class="brand-link">
+                    <svg class="brand-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="12" cy="12" r="10"/>
+                        <line x1="2" y1="12" x2="22" y2="12"/>
+                        <path d="m9 12 2 2 4-4"/>
+                    </svg>
+                    <span class="brand-text">LinguaLearn</span>
+                </a>
+            </div>
+
+            <div class="nav-links desktop-nav">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="quiz.html" class="nav-link">
+                    <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M9.5 2A2.5 2.5 0 0 1 12 4.5v15a2.5 2.5 0 0 1-4.96.44L5.5 19a2.5 2.5 0 0 1-2.96-2.46V6.5A2.5 2.5 0 0 1 5.5 4h.44a2.5 2.5 0 0 1 2.46-2z"/>
+                    </svg>
+                    Quiz
+                </a>
+                <div class="dropdown">
+                    <button class="nav-link dropdown-btn">
+                        <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/>
+                            <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/>
+                        </svg>
+                        Dictionary
+                    </button>
+                    <div class="dropdown-menu">
+                        <a href="spanish-dictionary.html" class="dropdown-item">Spanish Dictionary</a>
+                        <a href="french-dictionary.html" class="dropdown-item">French Dictionary</a>
+                        <a href="german-dictionary.html" class="dropdown-item">German Dictionary</a>
+                    </div>
+                </div>
+                <button class="btn btn-primary">Get Started</button>
+            </div>
+
+            <div class="mobile-menu-btn">
+                <button class="hamburger" onclick="toggleMobileMenu()">
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                </button>
+            </div>
+        </div>
+
+        <div class="mobile-nav" id="mobileNav">
+            <a href="index.html" class="mobile-nav-link">Home</a>
+            <a href="quiz.html" class="mobile-nav-link">Quiz</a>
+            <a href="spanish-dictionary.html" class="mobile-nav-link">Spanish Dictionary</a>
+            <a href="french-dictionary.html" class="mobile-nav-link">French Dictionary</a>
+            <a href="german-dictionary.html" class="mobile-nav-link">German Dictionary</a>
+        </div>
+    </nav>
+
+    <main class="main-content">
+        <div class="container">
+            <div class="quiz-container">
+                <!-- Quiz Progress -->
+                <div class="progress-container">
+                    <div class="progress-info">
+                        <h1 class="quiz-title">Language Quiz</h1>
+                        <span class="question-counter">Question <span id="currentQuestion">1</span> of <span id="totalQuestions">5</span></span>
+                    </div>
+                    <div class="progress-bar">
+                        <div class="progress-fill" id="progressFill" style="width: 20%"></div>
+                    </div>
+                </div>
+
+                <!-- Quiz Question -->
+                <div class="card question-card" id="questionCard">
+                    <div class="card-header">
+                        <div class="question-header">
+                            <h2 class="card-title" id="questionText">What does 'Hola' mean in English?</h2>
+                            <span class="language-badge" id="languageBadge">Spanish</span>
+                        </div>
+                    </div>
+                    <div class="card-content">
+                        <div class="options-container" id="optionsContainer">
+                            <!-- Options will be populated by JavaScript -->
+                        </div>
+
+                        <div class="explanation hidden" id="explanation">
+                            <p><strong>Explanation:</strong> <span id="explanationText"></span></p>
+                        </div>
+
+                        <div class="quiz-footer">
+                            <div class="score-display">
+                                Score: <span id="currentScore">0</span>/<span id="questionsAnswered">0</span>
+                            </div>
+                            <button class="btn btn-primary" id="nextButton" onclick="nextQuestion()" disabled>
+                                Next Question
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Quiz Results (hidden initially) -->
+                <div class="results-container hidden" id="resultsContainer">
+                    <div class="results-card">
+                        <h1 class="results-title">Quiz Completed!</h1>
+                        <p class="results-subtitle">Here are your results</p>
+                        
+                        <div class="score-display-large" id="finalScore">0/5</div>
+                        <div class="percentage-display" id="percentageScore">You scored 0%</div>
+                        
+                        <div class="results-message" id="resultsMessage"></div>
+                        
+                        <button class="btn btn-primary btn-large" onclick="restartQuiz()">
+                            <svg style="width: 16px; height: 16px; margin-right: 8px;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M3 12a9 9 0 0 1 9-9 9.75 9.75 0 0 1 6.74 2.74L21 8"/>
+                                <path d="M21 3v5h-5"/>
+                                <path d="M21 12a9 9 0 0 1-9 9 9.75 9.75 0 0 1-6.74-2.74L3 16"/>
+                                <path d="M3 21v-5h5"/>
+                            </svg>
+                            Take Quiz Again
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="scripts/main.js"></script>
+    <script src="scripts/quiz.js"></script>
+</body>
+</html>
